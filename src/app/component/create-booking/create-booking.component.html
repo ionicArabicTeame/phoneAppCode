@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ selectedPhone.barnd}}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center" padding>
+<p>{{ selectedPhone.barnd }}</p>
+<ion-button color="primary" (click)="onBookPhone()" >BooK</ion-button>
+</ion-content>

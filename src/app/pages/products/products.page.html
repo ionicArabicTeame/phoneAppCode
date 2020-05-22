@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Discover Phones</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button routerLink="/tabs/products/new">
+        <ion-icon name="add" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              {{ loadedPhones[0].barnd }}
+            </ion-card-title>
+            <ion-card-subtitle>
+              {{ loadedPhones[0].price | currency }}
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-img [src]="loadedPhones[0].imgUrl"></ion-img>
+          <ion-card-content>
+            <p>{{ loadedPhones[0].specification }}</p>
+          </ion-card-content>
+          <div>
+            <ion-button [routerLink]="['/', 'tabs', 'products', 'phone', loadedPhones[0].id]" fill="clear" color="primary">More</ion-button>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+      <ion-list>
+        <ion-item *ngFor="let phone of loadedPhones.slice(1)" 
+        [routerLink]="[
+        '/',
+        'tabs',
+        'products',
+        'phone',
+        phone.id
+]" detail>
+          <ion-thumbnail slot="start">
+            <ion-img [src]="phone.imgUrl">
+            </ion-img>
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ phone.barnd }}</h2>
+            <p>{{ phone.specification }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
