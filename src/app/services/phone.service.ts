@@ -26,6 +26,15 @@ export class PhoneService {
     ),
 
     new Phone (
+      'p4',
+      'APPLE IPHONE 11',
+      'Apple',
+      'Weight: 194gDimensions: 150.9 x 75.7 x 8.3 mmOS: iOS 13Screen size: 6.1 inchesResolution: 828 x 1792CPU: Apple A13 Bionic (7 nm)RAM: 4GBStorage: 64/128/256GBBattery: 3,110 mAhRear camera: 12MP Wide-Angle + 12 MP Ultra-Wide-AngleFront camera: 12MP',
+      'https://media.zid.store/2d52c80a-54a2-4d51-becf-1c1f3b4e6f81/71f2a2d1-2bc8-4879-9c62-2a3317a0989a.png',
+      999
+    ),
+
+    new Phone (
       'p3',
       'SAMSUNG GALAXY S20 ULTRA',
       'SAMSUNG',
